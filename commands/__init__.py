@@ -24,7 +24,7 @@ def searching(update: Update, context: CallbackContext):
     full_index, title, keyword = search_sub(sub_name)
     inline_keyboard = []
     if len(full_index) == 0:
-        context.bot.edit_message_text(chat_id=update.effective_chat.id, message_id=search_message.message_id, text="No results found")
+        context.bot.edit_message_text(chat_id=update.effective_chat.id, message_id=search_message.message_id, text="😕 No results found")
         return
     
     index = full_index[:15]
