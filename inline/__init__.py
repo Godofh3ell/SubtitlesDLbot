@@ -22,7 +22,7 @@ def button(update, context):
     index, language, link = get_lang(sub)
 
     if len(index) == 0:
-        query.edit_message_text(text="Something went wrong")
+        query.edit_message_text(text="🙄 Fuk - Something went wrong")
         return
 
     inline_keyboard = []
@@ -32,24 +32,24 @@ def button(update, context):
         inline_keyboard.append([InlineKeyboardButton(f"{button_name.upper()}", switch_inline_query_current_chat=f"{button_data}")])
 
     reply_markup = InlineKeyboardMarkup(inline_keyboard)
-    query.edit_message_text(text="Select your language", reply_markup=reply_markup)
+    query.edit_message_text(text="☑️ Select your language", reply_markup=reply_markup)
 
 def inlinequery(update, context):
     query = update.inline_query.query
     inline = [
         [
-            InlineKeyboardButton("Our Group", url="https://telegram.dog/Keralasbots"),
-            InlineKeyboardButton("Our Channel", url="https://telegram.dog/Keralabotsnews")
+            InlineKeyboardButton("👥 Our Group", url="https://telegram.dog/joinchat/MFPEc0YRiJqBFvYUtPgNVQ"),
+            InlineKeyboardButton("⚡ Our Channel", url="https://telegram.dog/TSNM_CHNLS")
         ]
     ]
     results = [
         InlineQueryResultDocument(
             id=uuid4(),
             document_url=query,
-            title="Get the File",
+            title="🔘 Get the File",
             mime_type="application/zip",
             reply_markup=InlineKeyboardMarkup(inline),
-            caption="©️ @GetSubtitles_bot\n\nUse @UnzipTGBot for unzipping this zip file or download the file and unzip manually"
+            caption="©️ @TSNM_CHNLS \n\nUse Any Unzip bot for unzipping this zip file or download the file and unzip manually"
         )
     ]
     update.inline_query.answer(results)
